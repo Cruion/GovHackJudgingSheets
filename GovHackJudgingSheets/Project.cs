@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace GovHackJudgingSheets
 {
@@ -7,6 +8,7 @@ namespace GovHackJudgingSheets
     {
         public int id;
         public string title;
+        public string safeTitle;
         public string team;
         public string url;
         public string location;
@@ -23,6 +25,10 @@ namespace GovHackJudgingSheets
         {
             this.id = id;
             this.title = title;
+
+            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+            this.safeTitle = rgx.Replace(title, "");
+
             this.team = team;
             this.url = url;
             this.location = location;
