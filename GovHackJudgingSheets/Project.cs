@@ -21,6 +21,11 @@ namespace GovHackJudgingSheets
         public List<string> challenges;
         public List<Tuple<string, string>> justifications;
 
+        public string filename;
+        public Judging judging;
+
+        public string assignedJudge;
+
         public Project(int id, string title, string team, string url, string location, string state, string video, string source)
         {
             this.id = id;
@@ -38,6 +43,7 @@ namespace GovHackJudgingSheets
 
             this.challenges = new List<string>();
             this.justifications = new List<Tuple<string, string>>();
+
         }
 
         public void AddDescription(string description)
@@ -58,6 +64,21 @@ namespace GovHackJudgingSheets
         public void AddJustification(string challenge, string justification)
         {
             this.justifications.Add(new Tuple<string, string>(challenge, justification));
+        }
+
+        public void AddFilename(string filename)
+        {
+            this.filename = filename;
+        }
+
+        public void AddJudging(string name, string email)
+        {
+            this.judging = new Judging(name, email);
+        }
+
+        public void AddAssignedJudge(string name)
+        {
+            this.assignedJudge = name;
         }
     }
 }

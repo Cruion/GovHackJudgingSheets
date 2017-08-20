@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Award.cs" />
+    <Compile Include="Judging.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
